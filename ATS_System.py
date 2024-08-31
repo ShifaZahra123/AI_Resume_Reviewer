@@ -9,7 +9,6 @@ import io
 import pdf2image # Convert PDF to Image
 import base64
 import fitz
-
 import google.generativeai as genai
 
 os.getenv("GOOGLE_API_KEY")
