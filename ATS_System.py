@@ -38,7 +38,7 @@ def input_pdf_setup(uploaded_file):
 
 ## Streamlit App
 
-st.set_page_config(page_title="Resume Expert")
+st.set_page_config(page_title="ATS Resume Expert")
 
 st.header("JobFit Analyzer")
 st.subheader('This Application helps you in your Resume Review with help of GEMINI AI [LLM]')
