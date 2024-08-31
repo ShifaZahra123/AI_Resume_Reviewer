@@ -4,7 +4,7 @@ load_dotenv()
 
 import streamlit as st
 import os
-from PIL import Image
+from PIL import Image # Python Image Library
 import io
 import pdf2image # Convert PDF to Image
 import base64
