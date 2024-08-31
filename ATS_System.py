@@ -4,11 +4,12 @@ load_dotenv()
 
 import streamlit as st
 import os
-from PIL import Image # Python Image Library
+from PIL import Image
 import io
-import pdf2image # Convert PDF to Image
+import pdf2image
 import base64
 import fitz
+
 import google.generativeai as genai
 
 os.getenv("GOOGLE_API_KEY")
@@ -38,9 +39,9 @@ def input_pdf_setup(uploaded_file):
 
 ## Streamlit App
 
-st.set_page_config(page_title="ATS Resume Expert")
+st.set_page_config(page_title="Resume Expert")
 
-st.header("ATS Tracking System")
+st.header("JobFit Analyzer")
 st.subheader('This Application helps you in your Resume Review with help of GEMINI AI [LLM]')
 input_text = st.text_input("Job Description: ", key="input")
 uploaded_file = st.file_uploader("Upload your Resume(PDF)...", type=["pdf"])
@@ -62,7 +63,7 @@ input_promp = st.text_input("Queries: Feel Free to Ask here")
 submit5 = st.button("Answer My Query")
 
 input_prompt1 = """
- You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description for these profiles. 
+ You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. 
   Please share your professional evaluation on whether the candidate's profile aligns with the role. 
  Highlight the strengths and weaknesses of the applicant in relation to the specified job requirements.
 """
@@ -75,7 +76,7 @@ Additionally, offer advice on enhancing the candidate's skills and identify area
 """
 
 input_prompt3 = """
-You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality, 
+You are an skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality, 
 your task is to evaluate the resume against the provided job description. As a Human Resource manager,
  assess the compatibility of the resume with the role. Give me what are the keywords that are missing
  Also, provide recommendations for enhancing the candidate's skills and identify which areas require further development.
@@ -93,7 +94,7 @@ if submit1:
         st.subheader("The Response is")
         st.write(response)
     else:
-        st.write("Please upload Resume")
+        st.write("Please upload a PDF file to proceed.")
 
 elif submit2:
     if uploaded_file is not None:
@@ -102,7 +103,7 @@ elif submit2:
         st.subheader("The Response is")
         st.write(response)
     else:
-        st.write("Please upload Resume")
+        st.write("Please upload a PDF file to proceed.")
 
 elif submit3:
     if uploaded_file is not None:
@@ -111,7 +112,7 @@ elif submit3:
         st.subheader("The Response is")
         st.write(response)
     else:
-        st.write("Please upload Resume")
+        st.write("Please upload a PDF file to proceed.")
 
 elif submit4:
     if uploaded_file is not None:
@@ -120,7 +121,7 @@ elif submit4:
         st.subheader("The Response is")
         st.write(response)
     else:
-        st.write("Please upload Resume")
+        st.write("Please upload a PDF file to proceed.")
 
 elif submit5:
     if uploaded_file is not None:
@@ -129,7 +130,7 @@ elif submit5:
         st.subheader("The Response is")
         st.write(response)
     else:
-        st.write("Please upload Resume.")
+        st.write("Please upload a PDF file to proceed.")
 
 footer = """
 ---
