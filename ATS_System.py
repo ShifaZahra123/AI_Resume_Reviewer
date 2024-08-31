@@ -6,7 +6,7 @@ import streamlit as st
 import os
 from PIL import Image
 import io
-import pdf2image
+import pdf2image # Convert PDF to Image
 import base64
 import fitz
 
